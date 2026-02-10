@@ -122,7 +122,7 @@ intro n hn m hm
 change |q m (N' m) - q n (N' n)| < ε
 have f1 : |q m (N' m) - q n (N' n)| = |(q m (N' m) -  q n (N' m)) + (q n (N' m) - q n (N' n))| := by ring_nf
 have f2 : |(q m (N' m) -  q n (N' m)) + (q n (N' m) - q n (N' n))| ≤
-  |(q m (N' m) -  q n (N' m))| + |(q n (N' m) - q n (N' n))| := by apply abs_add
+  |(q m (N' m) -  q n (N' m))| + |(q n (N' m) - q n (N' n))| := by apply abs_add_le
 have := (N'bnd' m n hm)
 have := hN1
 --have := hN m (N' m) (N'bnd m) (N' n) (by apply N'mono hm)
@@ -161,8 +161,8 @@ have hy : IsCauchy y := by
   change |(q m (N m)) - xm| < 1 / (m + 1) at qmBnd
   have f1 : |(q m (N m) : ℝ) - q n (N n)| = |(q m (N m) - xm) + ((xn - q n (N n)) + (xm - xn))| := by ring_nf
   have f2 : |(q m (N m) - xm) + ((xn - q n (N n)) + (xm - xn))| ≤
-    |(q m (N m) - xm)| + |(xn - q n (N n)) + (xm - xn)| := by apply abs_add
-  have f3 : |(xn - q n (N n)) + (xm - xn)| ≤ |(xn - q n (N n))| + |(xm - xn)| := by apply abs_add
+    |(q m (N m) - xm)| + |(xn - q n (N n)) + (xm - xn)| := by apply abs_add_le
+  have f3 : |(xn - q n (N n)) + (xm - xn)| ≤ |(xn - q n (N n))| + |(xm - xn)| := by apply abs_add_le
   have f3' : |(xn - q n (N n))| = |q n (N n) - xn| := by apply abs_sub_comm
   have f4 : (1 : ℝ) / (n + 1) < ε / 3 := by sorry
   have f5 : (1 : ℝ) / (m + 1) < ε / 3 := by sorry
@@ -183,7 +183,7 @@ change |xn - L| < ε
 change ∀ n ≥ N3, |y n - L| < ε / 2 at hN3
 
 rewrite [show |xn - L| = |(xn - y n) + (y n - L)| by ring_nf]
-have f1 : |(xn - y n) + (y n - L)| ≤ |(xn - y n)| + |(y n - L)| := by apply abs_add
+have f1 : |(xn - y n) + (y n - L)| ≤ |(xn - y n)| + |(y n - L)| := by apply abs_add_le
 specialize hN n (N n) (by bound)
 change |y n - xn| < 1 / (n + 1) at hN
 rewrite [show |y n - xn| = |xn - y n| by apply abs_sub_comm] at hN

@@ -30,9 +30,8 @@ specialize hN2 n (by bound)
 specialize hN3 n (by bound)
 ring_nf at hN3
 have f1 : |L - M| = |(L - a n) + ((a n - b n) + (b n - M))| := by ring_nf
-have f2 : |(L - a n) + ((a n - b n) + (b n - M))| ≤ |(L - a n)| + |((a n - b n) + (b n - M))| := by apply abs_add
-have f3 : |((a n - b n) + (b n - M))| ≤ |(a n - b n)| + |(b n - M)| := by apply
-abs_add
+have f2 : |(L - a n) + ((a n - b n) + (b n - M))| ≤ |(L - a n)| + |((a n - b n) + (b n - M))| := by apply abs_add_le
+have f3 : |((a n - b n) + (b n - M))| ≤ |(a n - b n)| + |(b n - M)| := by apply abs_add_le
 have f4 : |(L - a n)| = |a n - L| := by apply abs_sub_comm
 linarith[ f1, f2, f3,f4, hN1, hN2, hN3]
 

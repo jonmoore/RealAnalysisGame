@@ -55,7 +55,7 @@ specialize hN1 n (by bound) m (by bound)
 specialize hN2 n (by bound) m (by bound)
 change |(a m + b m) - (a n + b n)| < ε
 rewrite [(by ring_nf : |(a m + b m) - (a n + b n)| = |(a m - a n) + (b m - b n)|)]
-have f1 : |a m - a n + (b m - b n)| ≤ |a m - a n| + |(b m - b n)| := by apply abs_add
+have f1 : |a m - a n + (b m - b n)| ≤ |a m - a n| + |(b m - b n)| := by apply abs_add_le
 linarith [f1, hN1, hN2]
 
 Conclusion "

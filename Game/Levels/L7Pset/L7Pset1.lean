@@ -25,7 +25,7 @@ use N
 intro n hn
 specialize hN n hn
 have f1 : |a n| = |a n - L + L| := by ring_nf
-have f2 : |a n - L + L| ≤ |a n - L| + |L| := by apply abs_add
+have f2 : |a n - L + L| ≤ |a n - L| + |L| := by apply abs_add_le
 linarith [f1, f2, hN]
 
 Conclusion "Done."

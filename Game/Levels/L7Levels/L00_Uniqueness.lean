@@ -80,7 +80,7 @@ specialize hN1 (N1 + N2) f3
 specialize hN2 (N1 + N2) f4
 have f5 : |L - M| = |(L - a (N1+N2)) + (a (N1 + N2) - M)| := by ring_nf
 have f6 : |(L - a (N1+N2)) + (a (N1 + N2) - M)| ≤
-    |(L - a (N1+N2))| + |(a (N1 + N2) - M)| := by apply abs_add
+    |(L - a (N1+N2))| + |(a (N1 + N2) - M)| := by apply abs_add_le
 have f7 : |(L - a (N1+N2))| = |-(a (N1+N2) - L)| := by ring_nf
 have f8 : |-(a (N1+N2) - L)| = |(a (N1+N2) - L)| := by apply abs_neg
 linarith [f5, f6, f7, f8, hN1, hN2]

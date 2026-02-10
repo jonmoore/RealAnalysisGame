@@ -102,9 +102,9 @@ And that get us the desired contradiction.
 - **Negation**: If `P` is some `Prop`, then `¬ P` is definitionally equivalent to `P → False`. So you can write `change P → False`, either at the Goal, or `at` a hypothesis.
 
 
-- **The triangle inequality**: To add the fact that `|x + y| ≤ |x| + |y|` to our list of hypotheses, invoke the `abs_add` theorem:
+- **The triangle inequality**: To add the fact that `|x + y| ≤ |x| + |y|` to our list of hypotheses, invoke the `abs_add_le` theorem:
 
-`have factName : |x + y| ≤ |x| + |y| := by apply abs_add`
+`have factName : |x + y| ≤ |x| + |y| := by apply abs_add_le`
 
 - **Negation inside an absolute value**: You may also find useful the theorem `abs_neg`, which can be called via:
 
@@ -119,16 +119,16 @@ followed by a minus sign, `abs_neg` won't work!
 "
 
 /--
-Usage: `have factName : |x + y| ≤ |x| + |y| := by apply abs_add`
+Usage: `have factName : |x + y| ≤ |x| + |y| := by apply abs_add_le`
 -/
-TheoremDoc abs_add as "abs_add" in "|x|"
+TheoremDoc abs_add_le as "abs_add_le" in "|x|"
 
 /--
 Usage: `have factName : |-x| = |x| := by apply abs_neg`
 -/
 TheoremDoc abs_neg as "abs_neg" in "|x|"
 
-NewTheorem abs_add abs_neg
+NewTheorem abs_add_le abs_neg
 
 /-- `(a : ℕ → ℝ) := ∃ L, SeqLim a L`
 
@@ -166,10 +166,10 @@ Statement (a : ℕ → ℝ) (ha : ∀ n, a n = (-1) ^ n) :
   rewrite [f5] at f1
   have f6 : (-1 : ℝ) ^ (2 * N + 1) = -1 := by bound
   rewrite [f6] at f2
-  have f7 : (2 : ℝ) = |2| := by norm_num
+  have f7 : (2 : ℝ) = |2| := (abs_of_pos two_pos).symm
   have f8 : |(2 : ℝ)| = |1 - (-1)| := by ring_nf
-  have f9 : |1 - (-1)| = |(1 - L) + (L - (-1))| := by ring_nf
-  have f10 : |(1 - L) + (L - (-1))| ≤ |(1 - L)| + |(L - (-1))| := by apply abs_add
+  have f9 : |1 - (-1)| = |(1 - L) + (L - (-1))| := by congr 1; ring
+  have f10 : |(1 - L) + (L - (-1))| ≤ |(1 - L)| + |(L - (-1))| := by apply abs_add_le
   have f11 : |(L - (-1))| = |-((-1) - L)| := by ring_nf
   have f12 : |-((-1) - L)| = |((-1) - L)| := by apply abs_neg
   have f13 : (2 : ℝ) < 1/2 + 1/2 := by linarith [f8, f9, f10, f11, f12, f7, f1, f2]

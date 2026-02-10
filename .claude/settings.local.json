@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(lake build:*)",
+      "Bash(wait:*)",
+      "Bash(git ls-remote:*)",
+      "Bash(lake update:*)",
+      "Bash(find:*)",
+      "Bash(grep:*)"
+    ]
+  }
+}
