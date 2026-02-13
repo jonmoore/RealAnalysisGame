@@ -74,7 +74,7 @@ intro n hn m hm
 have hn' : |a n - L| < ε / 2 := by apply hN n hn
 have hm' : |a m - L| < ε / 2 := by apply hN m (by bound)
 rewrite [(by ring_nf : |a m - a n| = |(a m - L) + (L - a n)|)]
-have f1 : |(a m - L) + (L - a n)| ≤ |a m - L| + |L - a n| := by apply abs_add
+have f1 : |(a m - L) + (L - a n)| ≤ |a m - L| + |L - a n| := by apply abs_add_le
 have f2 : |L - a n| = |a n - L| := by apply abs_sub_comm
 linarith [f1, f2, hn', hm']
 

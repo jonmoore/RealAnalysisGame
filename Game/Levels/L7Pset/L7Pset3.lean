@@ -27,7 +27,7 @@ have absy : |-y| = |y| := by apply abs_neg
 have absy' : |-y| = -y := by apply abs_of_nonneg hy
 have xsubneg : |x - -y| = |x + y| := by ring_nf
 rewrite [← absy, absy', xsubneg]
-have f1 : |x + y| ≤ |x| + |y| := by apply abs_add
+have f1 : |x + y| ≤ |x| + |y| := by apply abs_add_le
 rewrite [absx, ← absy, absy'] at f1
 have f2 : x + -y = x - y := by ring_nf
 rewrite [f2] at f1
@@ -48,7 +48,7 @@ have xy : 0 ≤ -(x - y) := by bound
 have absxy : |-(x - y)| = -(x - y) := by apply abs_of_nonneg xy
 have absxy' : |-(x - y)| = |x - y| := by apply abs_neg
 rewrite [f1, f2, ← absxy', absxy]
-have f3 : |x + y| ≤ |x| + |y| := by apply abs_add
+have f3 : |x + y| ≤ |x| + |y| := by apply abs_add_le
 rewrite [absy, ← absxneg, absxeq] at f3
 have f4 : -(x - y) = -x + y := by ring_nf
 rewrite [f4]

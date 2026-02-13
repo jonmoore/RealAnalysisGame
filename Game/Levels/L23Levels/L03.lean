@@ -141,13 +141,13 @@ have hxy' : |y - x| < (δs i i.2) / 2 := by
   sorry
 have hyxi : |y - xs i| < (δs i i.2) := by
   rewrite [show y - xs i = (y - x) + (x - xs i) by ring_nf]
-  have h1 : |(y - x) + (x - xs i)| ≤ |y - x| + |x - xs i| := by apply abs_add
+  have h1 : |(y - x) + (x - xs i)| ≤ |y - x| + |x - xs i| := by apply abs_add_le
   have h2 : |x - xs i| = |xs i - x| := by apply abs_sub_comm
   linarith [hxy', hxxi, h1, h2]
 have fyfxi := hδs (xs i) i.2 y hy hyxi
 have fxix := hδs (xs i) i.2 x hx hxxi'
 rewrite [show f y - f x = (f y - f (xs i)) + (f (xs i) - f x) by ring_nf]
-have h1 : |(f y - f (xs i)) + (f (xs i) - f x)| ≤ |f y - f (xs i)| + |f (xs i) - f x| := by apply abs_add
+have h1 : |(f y - f (xs i)) + (f (xs i) - f x)| ≤ |f y - f (xs i)| + |f (xs i) - f x| := by apply abs_add_le
 rewrite [show |f (xs i) - f x| = |f x - f (xs i)| by apply abs_sub_comm] at h1
 linarith [fyfxi, fxix, h1]
 

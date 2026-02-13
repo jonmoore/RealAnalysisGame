@@ -1,4 +1,5 @@
 import Mathlib.Tactic.Linarith
+import Mathlib.Util.ElabWithoutMVars
 
 open Mathlib.Tactic in
 
@@ -10,7 +11,7 @@ syntax (name := Game.linarith) "linarith" "!"? linarithArgsRest : tactic
 open Lean Mathlib Syntax Elab Tactic in
 elab_rules (kind := Game.linarith) : tactic
   | `(tactic| linarith $[!%$bang]? $cfg:optConfig $[[$args,*]]?) => withMainContext do
-    let args ← ((args.map (TSepArray.getElems)).getD {}).mapM (elabLinarithArg `linarith)
+    let args ← ((args.map (TSepArray.getElems)).getD {}).mapM (elabTermWithoutNewMVars `linarith)
     let cfg := (← elabLinarithConfig cfg).updateReducibility bang.isSome
     commitIfNoEx do liftMetaFinishingTactic <| Linarith.linarith true args.toList cfg
   | `(tactic| linarith $[!%$bang]? $cfg:optConfig only%$o $[[$args,*]]?) =>

@@ -126,7 +126,7 @@ have hz'' : |z - xi| < ri := by
 have hz''' : |y - z| ≤ ri := by linarith [hz', hr]
 have hiy : |y - xi| ≤ |y - z| + |z - xi| := by
   rewrite [show y - xi = (y - z) + (z - xi) by ring_nf]
-  apply abs_add
+  apply abs_add_le
 linarith [hdist, hz'', hz''', hiy, ripos]
 
 intro z hz

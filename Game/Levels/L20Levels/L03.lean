@@ -66,7 +66,7 @@ specialize hf x hx1
 specialize hg x hx2
 change |f x + g x - (f c + g c)| < ε
 rewrite [show f x + g x - (f c + g c) = (f x - f c) + (g x - g c) by ring_nf]
-have f1 : |(f x - f c) + (g x - g c)| ≤ |(f x - f c)| + |(g x - g c)| := by apply abs_add
+have f1 : |(f x - f c) + (g x - g c)| ≤ |(f x - f c)| + |(g x - g c)| := by apply abs_add_le
 linarith [f1, hf, hg]
 
 Conclusion "
