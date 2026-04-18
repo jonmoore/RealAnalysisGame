@@ -63,6 +63,8 @@ package Game where
   moreServerOptions := #[
     -- TODO: replace with `lean4game.verbose`
     ⟨`trace.debug, true⟩]
+  -- moreGlobalServerArgs := #["-M", "4096"]         --  jm
+
 
 @[default_target]
 lean_lib Game
