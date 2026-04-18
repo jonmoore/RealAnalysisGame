@@ -1,0 +1,56 @@
+
+/--
+have : ∀ x:ℝ, x > 0 → x * x > 0 := by
+  intro x hx
+  bound
+have modnzsqpos : ∀ x : ℝ, x ≠ 0 → |x| * |x| > 0 := by
+  intro x hx
+  have : |x| > 0 := by apply abs_pos_of_nonzero hx
+  bound
+have modnzpow2pos : ∀ x : ℝ, x ≠ 0 → |x| ^ 2 > 0 := by
+  intro x hx; ring_nf
+  have : |x| > 0 := by apply abs_pos_of_nonzero hx
+  bound
+have modx2eqx2: ∀ x:ℝ , |x| * |x| = x * x := by
+  bound
+have invLnz: 1/L ≠ 0 := by norm_num; apply LneZero
+have modLpos: 0 < |L| := by apply abs_pos_of_nonzero LneZero
+have modinvLpos: 0 < |1/L| := by apply abs_pos_of_nonzero invLnz
+have εpos: 0 <= ε := by bound
+have absεeqε : |ε| = ε := by apply abs_of_nonneg εpos
+have abs1eq1: |(1:ℝ)| = 1 := by apply abs_of_nonneg (by bound)
+have h_or : ε < |1/L| ∨ ε ≥ |1/L| := by
+  by_contra h
+  have h1 : ε < |1/L| := by
+    by_contra h2
+    have h5 : ε ≥ |1/L| := by linarith [h2]
+    apply h; right; apply h5
+  apply h; left; apply h1
+cases' h_or with h1 h2
+rewrite [abs_div] at h1; field_simp at h1; norm_num at h1
+have εL: -1 < ε * L ∧ ε * L < 1 := by
+  have h1' := h1
+  rewrite [← absεeqε] at h1'; rewrite [← abs_mul] at h1'; rewrite [abs_lt] at h1'; apply h1'
+have εL1: 1 + L * ε > 0 := by linarith [εL.1]
+have εL2: 1 - L * ε > 0 := by linarith [εL.2]
+have hep: ∃ εap, 1/(L-εap) = 1/L + ε := by
+  use ε * L * L /(1+ε * L);
+  field_simp;
+  ring_nf
+have hem: ∃ εam, 1/(L+εam) = 1/L - ε := by use ε * L^2/(1-ε * L); field_simp; ring_nf
+choose εap hεap using hep; choose εam hεam using hem;
+field_simp at hεap
+have : 0 < 1 + ε * L := by linarith [εL1]
+have εappos: ε * L^2/(1+ε * L) > 0 := by
+  have : ε * L^2 = ε * (L * L) := by ring_nf
+  rewrite [this]
+  have f1: |L| * |L| = L * L := modx2eqx2 L
+  have f2: |L| * |L| > 0 := modnzsqpos L (by bound)
+  rewrite [← f1]
+  bound
+have hap := aToL (ε * L^2/2) (by bound)
+choose N hN using hap
+use N; intro n ngeN
+rewrite [bEqInva n]
+field_simp
+-/
