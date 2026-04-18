@@ -176,8 +176,8 @@ have hy : IsCauchy y := by
   have qmBnd := hN m (N m) (by bound)
   have f1 : |(q m (N m) : ℝ) - q n (N n)| = |(q m (N m) - x m) + ((x n - q n (N n)) + (x m - x n))| := by ring_nf
   have f2 : |(q m (N m) - x m) + ((x n - q n (N n)) + (x m - x n))| ≤
-    |(q m (N m) - x m)| + |(x n - q n (N n)) + (x m - x n)| := by apply abs_add
-  have f3 : |(x n - q n (N n)) + (x m - x n)| ≤ |(x n - q n (N n))| + |(x m - x n)| := by apply abs_add
+    |(q m (N m) - x m)| + |(x n - q n (N n)) + (x m - x n)| := by apply abs_add_le
+  have f3 : |(x n - q n (N n)) + (x m - x n)| ≤ |(x n - q n (N n))| + |(x m - x n)| := by apply abs_add_le
   have f3' : |(x n - q n (N n))| = |q n (N n) - x n| := by apply abs_sub_comm
   field_simp at hN2
   have hn' : (N1 : ℝ) + N2 ≤ n := by exact_mod_cast hn
@@ -204,7 +204,7 @@ change |x n - L| < ε
 change ∀ n ≥ N3, |y n - L| < ε / 2 at hN3
 
 rewrite [show |x n - L| = |(x n - y n) + (y n - L)| by ring_nf]
-have f1 : |(x n - y n) + (y n - L)| ≤ |(x n - y n)| + |(y n - L)| := by apply abs_add
+have f1 : |(x n - y n) + (y n - L)| ≤ |(x n - y n)| + |(y n - L)| := by apply abs_add_le
 specialize hN n (N n) (by bound)
 change |y n - x n| < 1 / (n + 1) at hN
 rewrite [show |y n - x n| = |x n - y n| by apply abs_sub_comm] at hN

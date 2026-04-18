@@ -61,7 +61,7 @@ use N
 intro n hn
 specialize hN n hn
 have l1 : |L| = |a n + (L - a n)| := by ring_nf
-have l2 : |a n + (L - a n)| ≤ |a n| + |L - a n| := by apply abs_add
+have l2 : |a n + (L - a n)| ≤ |a n| + |L - a n| := by apply abs_add_le
 have l3 : |L - a n| = |-(a n - L)| := by ring_nf
 have l4 : |-(a n - L)| = |(a n - L)| := by apply abs_neg
 linarith [l1, l2, l3, l4, hN]

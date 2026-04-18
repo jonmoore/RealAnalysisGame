@@ -49,17 +49,17 @@ Statement (a : ℕ → ℝ) (ha2n : ∀ n, a (2 * n) = 3 - 1 / n) (ha2np1 : ∀ 
   have f6' : N ≤ 2 * (N + 5) + 1 := by bound
   have f7' : |a (2 * (N + 5) + 1) - L| < 1 / 2 := by apply hN (2 * (N + 5) + 1) f6'
 
-  have f8 : (2 : ℝ) = |2| := by norm_num
-  have f9 : |(2 : ℝ)| = |(3 - L) + (L - 1)| := by ring_nf
-  have f10 : |(3 - L) + (L - 1)| ≤ |(3 - L)| + |(L - 1)| := by apply abs_add
-  have f11 : |(3 - L)| = |(3 - a (2 * (N + 5))) + (a (2 * (N + 5)) - L)| := by ring_nf
+  have f8 : (2 : ℝ) = |2| := (abs_of_pos two_pos).symm
+  have f9 : |(2 : ℝ)| = |(3 - L) + (L - 1)| := by congr 1; ring
+  have f10 : |(3 - L) + (L - 1)| ≤ |(3 - L)| + |(L - 1)| := by apply abs_add_le
+  have f11 : |(3 - L)| = |(3 - a (2 * (N + 5))) + (a (2 * (N + 5)) - L)| := by congr 1; ring
   have f12 : |(3 - a (2 * (N + 5))) + (a (2 * (N + 5)) - L)| ≤
-    |(3 - a (2 * (N + 5)))| + |(a (2 * (N + 5)) - L)| := by apply abs_add
+    |(3 - a (2 * (N + 5)))| + |(a (2 * (N + 5)) - L)| := by apply abs_add_le
 
-  have f13 : |(L - 1)| = |-(1 - L)| := by ring_nf
+  have f13 : |(L - 1)| = |-(1 - L)| := by congr 1; ring
   have f14 : |-(1 - L)| = |(1 - L)| := by apply abs_neg
-  have f15 : |(1 - L)| = |(1 - a (2 * (N + 5) + 1)) + (a (2 * (N + 5) + 1) - L)| := by ring_nf
-  have f16 : |(1 - a (2 * (N + 5) + 1)) + (a (2 * (N + 5) + 1) - L)| ≤ |(1 - a (2 * (N + 5) + 1))| + |(a (2 * (N + 5) + 1) - L)| := by apply abs_add
+  have f15 : |(1 - L)| = |(1 - a (2 * (N + 5) + 1)) + (a (2 * (N + 5) + 1) - L)| := by congr 1; ring
+  have f16 : |(1 - a (2 * (N + 5) + 1)) + (a (2 * (N + 5) + 1) - L)| ≤ |(1 - a (2 * (N + 5) + 1))| + |(a (2 * (N + 5) + 1) - L)| := by apply abs_add_le
 
   have f17 : (2 : ℝ) ≤ 1 / 4 + 1 / 2 + 1 / 4 + 1 / 2 := by linarith [f8, f9, f10, f11, f12, f13, f14, f15, f16, f7, f7', f2, f2', f4]
   norm_num at f17

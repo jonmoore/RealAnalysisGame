@@ -125,7 +125,7 @@ be $f(0)=0^2-2=-2$ which is negative. And when $x=2$, $f(2)=2^2-2=2$ which is po
 
 **SIMPLICIO:** Supposedly one of them, Hippasus, figured out that $\\sqrt2$ is irrational, which ruined
 their entire theory of geometry and form (they originally believed that *all* numbers were rational); legend has it
-that Hippasus was drowned at sea for his herecy.
+that Hippasus was drowned at sea for his heresy.
 
 **SOCRATES:** So...
 

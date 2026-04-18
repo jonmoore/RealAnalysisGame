@@ -65,7 +65,7 @@ specialize f1 m hm
 linarith [f1, aNnonneg]
 specialize hN (by bound)
 have f2 : |a m| = |(a m - a N) + a N| := by ring_nf
-have f3 : |(a m - a N) + a N| ≤ |a m - a N| + |a N| := by apply abs_add
+have f3 : |(a m - a N) + a N| ≤ |a m - a N| + |a N| := by apply abs_add_le
 linarith [f2, f3, hN, sumNonneg]
 
 Conclusion "

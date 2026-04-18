@@ -74,7 +74,7 @@ Statement SumLim (a b c : ℕ → ℝ) (L M : ℝ)
   specialize hNa ineq_a
   specialize hNb ineq_b
   have ineq : |a n - L + (b n - M)| ≤
-    |a n - L| + |(b n - M)| := by apply abs_add
+    |a n - L| + |(b n - M)| := by apply abs_add_le
   bound --linarith [hNa, hNb, ineq]
 
 

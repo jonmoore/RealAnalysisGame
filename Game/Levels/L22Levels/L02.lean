@@ -115,9 +115,9 @@ intro y hy
 have h1 : |F y - F x| ≤ |f N y - F y| + |f N y - f N x| + |f N x - F x| := by
     rewrite [show F y - F x = (F y - f N y) + ((f N y - f N x) + (f N x - F x)) by ring_nf]
     have f1 : |(F y - f N y) + ((f N y - f N x) + (f N x - F x))| ≤
-        |(F y - f N y)| + |((f N y - f N x) + (f N x - F x))| := by apply abs_add
+        |(F y - f N y)| + |((f N y - f N x) + (f N x - F x))| := by apply abs_add_le
     have f2 : |((f N y - f N x) + (f N x - F x))| ≤ |f N y - f N x| + |f N x - F x| :=
-        by apply abs_add
+        by apply abs_add_le
     have f3 : |F y - f N y| = |f N y - F y| := by apply abs_sub_comm
     linarith [f1, f2, f3]
 have h2 : |f N y - F y| < ε / 3 := by apply hN N (by bound) y

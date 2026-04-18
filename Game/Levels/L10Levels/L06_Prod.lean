@@ -62,7 +62,7 @@ specialize hN2 n hn2
 specialize hc n
 rewrite [hc]
 have f1 : |a n * b n - L * M| = |(a n - L) * b n + (L * (b n -  M))| := by ring_nf
-have f2 : |(a n - L) * b n + (L * (b n -  M))| ≤ |(a n - L) * b n| + |(L * (b n -  M))| := by apply abs_add
+have f2 : |(a n - L) * b n + (L * (b n -  M))| ≤ |(a n - L) * b n| + |(L * (b n -  M))| := by apply abs_add_le
 have f3 : |(a n - L) * b n| = |(a n - L)| * |b n| := by apply abs_mul
 have bnBnd : |b n| ≤ K := by apply hK.2 n
 have f5 : |(a n - L)| * |b n| ≤ ε / (2 * K) * K := by bound

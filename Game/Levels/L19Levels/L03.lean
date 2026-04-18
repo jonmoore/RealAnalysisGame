@@ -94,7 +94,7 @@ specialize hN1 (N1 + N2) (by bound)
 rewrite [show Series (a ∘ σ) n - L =
   (Series (a ∘ σ) n - Series a (N1 + N2)) + (Series a (N1 + N2) - L) by ring_nf]
 have f1 : |Series (a ∘ σ) n - Series a (N1 + N2) + (Series a (N1 + N2) - L)|
-        ≤ |Series (a ∘ σ) n - Series a (N1 + N2)| + |(Series a (N1 + N2) - L)| := by apply abs_add
+        ≤ |Series (a ∘ σ) n - Series a (N1 + N2)| + |(Series a (N1 + N2) - L)| := by apply abs_add_le
 have f2 : |Series (a ∘ σ) n - Series a (N1 + N2)| =
     |∑ k ∈ image σ (range n) \ range (N1 + N2), a k| := by
   have f : Series (a ∘ σ) n = ∑ k ∈ image σ (range n), a k := Series_image a σ hσ.1 n

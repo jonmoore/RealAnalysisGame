@@ -25,7 +25,7 @@ choose n hn using ha
 specialize hN n hn.1
 have ha : |a n| > 10 := by apply hn.2
 have f2 : |a n| = |(a n - L) + L| := by ring_nf
-have f3 : |(a n - L) + L| ≤ |(a n - L)| + |L| := by apply abs_add
+have f3 : |(a n - L) + L| ≤ |(a n - L)| + |L| := by apply abs_add_le
 linarith [f1, ha, f2, f3, hN]
 
 Conclusion "Done."

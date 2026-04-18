@@ -93,7 +93,7 @@ have ht2 : |t - x| < ε / (|2 * x| + 1) := by linarith [ht, δ2]
 have ht : |t + x| ≤ |2 * x| + 1 := by
   have ht' : |t + x| ≤ |t - x| + |2 * x| := by
     rewrite [show t + x = t - x + 2 * x by ring_nf]
-    have f1 : |t - x + 2 * x| ≤ |t - x| + |2 * x| := by apply abs_add
+    have f1 : |t - x + 2 * x| ≤ |t - x| + |2 * x| := by apply abs_add_le
     apply f1
   linarith [ht', ht1]
 have ht' : |t - x| * |t + x| ≤ |t - x| * (|2 * x| + 1) := by bound
@@ -138,5 +138,4 @@ You've now established that `f(x) = x² - 1` is:
 - **Differentiable everywhere** (from Level 3)
 
 This illustrates a fundamental hierarchy: differentiability implies continuity. Functions that have derivatives must be continuous, but continuous functions need not have derivatives everywhere.
-a
 "

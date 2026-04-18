@@ -64,7 +64,7 @@ have f1 : |RiemannSum f a b m - RiemannSum f a b n| ≤
   rewrite [show RiemannSum f a b m - RiemannSum f a b n =
       (RiemannSum f a b m - RiemannSum f a b (m * n)) +
       (RiemannSum f a b (n * m) - RiemannSum f a b n) by ring_nf]
-  apply abs_add
+  apply abs_add_le
 have hfn := RiemannSumRefinement f hab (show n ≠ 0 by bound) (show m ≠ 0 by bound) (show 0 < ε / (2 * (b - a)) by bound)
     (show 0 < δ by bound) hδ₂ hn_small
 have hfm := RiemannSumRefinement f hab (show m ≠ 0 by bound) (show n ≠ 0 by bound) (show 0 < ε / (2 * (b - a)) by bound)

@@ -23,7 +23,7 @@ by_cases hm' : n ≤ m
 specialize hm hm'
 rewrite [sum_Ico_succ hm']
 rewrite [sum_Ico_succ hm']
-have f : |∑ k ∈ Ico n m, a k + a m|  ≤ |∑ k ∈ Ico n m, a k| + |a m| := by apply abs_add
+have f : |∑ k ∈ Ico n m, a k + a m|  ≤ |∑ k ∈ Ico n m, a k| + |a m| := by apply abs_add_le
 linarith [f, hm]
 have hn : n = m+1 := by bound
 rewrite [hn]
