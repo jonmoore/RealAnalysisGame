@@ -1,0 +1,640 @@
+{
+  "inventory": [
+    "apply",
+    "[anonymous]",
+    "rfl",
+    "rewrite",
+    "ring_nf",
+    "use",
+    "intro",
+    "specialize",
+    "choose",
+    "have",
+    "change",
+    "norm_num",
+    "SeqLim",
+    "ConstLim",
+    "bound",
+    "push_cast",
+    "ArchProp",
+    "exact_mod_cast",
+    "field_simp",
+    "linarith",
+    "OneOverNLimZero",
+    "abs_of_nonneg",
+    "abs_add",
+    "abs_neg",
+    "SeqConv",
+    "abs_mul",
+    "SumLim",
+    "split_ands",
+    "left",
+    "right",
+    "cases'",
+    "abs_lt",
+    "SqueezeThm",
+    "by_contra",
+    "abs_pos_of_nonzero",
+    "LimUnique",
+    "EventuallyGeHalfLimPos",
+    "abs_Lipschitz",
+    "AbsLim",
+    "abs_div",
+    "nonzero_of_abs_pos",
+    "InvLim"
+  ],
+  "readIntro": false,
+  "data": {
+    "RealAnalysisStory": {
+      "1": {
+        "code": "apply h\r\n",
+        "completed": true,
+        "selections": [
+          {
+            "selectionStartLineNumber": 2,
+            "selectionStartColumn": 1,
+            "positionLineNumber": 2,
+            "positionColumn": 1
+          }
+        ],
+        "help": []
+      },
+      "2": {
+        "code": "rfl\r\n",
+        "completed": true,
+        "selections": [
+          {
+            "selectionStartLineNumber": 2,
+            "selectionStartColumn": 1,
+            "positionLineNumber": 2,
+            "positionColumn": 1
+          }
+        ],
+        "help": []
+      },
+      "3": {
+        "code": "rewrite [Bob]\r\nrfl\r\n",
+        "completed": true,
+        "selections": [
+          {
+            "selectionStartLineNumber": 3,
+            "selectionStartColumn": 1,
+            "positionLineNumber": 3,
+            "positionColumn": 1
+          }
+        ],
+        "help": []
+      },
+      "4": {
+        "code": "ring_nf\r\n",
+        "completed": true,
+        "selections": [
+          {
+            "selectionStartLineNumber": 2,
+            "selectionStartColumn": 1,
+            "positionLineNumber": 2,
+            "positionColumn": 1
+          }
+        ],
+        "help": []
+      },
+      "5": {
+        "code": "use 6\r\nring_nf\r\n",
+        "completed": true,
+        "selections": [
+          {
+            "selectionStartLineNumber": 3,
+            "selectionStartColumn": 1,
+            "positionLineNumber": 3,
+            "positionColumn": 1
+          }
+        ],
+        "help": []
+      },
+      "6": {
+        "code": "intro\r\nintro\r\nrfl\r\n",
+        "completed": true,
+        "selections": [
+          {
+            "selectionStartLineNumber": 4,
+            "selectionStartColumn": 1,
+            "positionLineNumber": 4,
+            "positionColumn": 1
+          }
+        ],
+        "help": []
+      },
+      "7": {
+        "code": "specialize hf t\r\nspecialize hf t_pos\r\napply hf\r\n",
+        "completed": true,
+        "selections": [
+          {
+            "selectionStartLineNumber": 4,
+            "selectionStartColumn": 1,
+            "positionLineNumber": 4,
+            "positionColumn": 1
+          }
+        ],
+        "help": []
+      },
+      "8": {
+        "code": "choose c hc using h\r\nuse c\r\nrewrite [hc]\r\nring_nf\r\n",
+        "completed": true,
+        "selections": [
+          {
+            "selectionStartLineNumber": 5,
+            "selectionStartColumn": 1,
+            "positionLineNumber": 5,
+            "positionColumn": 1
+          }
+        ],
+        "help": []
+      },
+      "9": {
+        "code": "choose b hb using h_existential\r\nuse b\r\nrewrite [hb]\r\nintro\r\nintro hy\r\nspecialize h_universal y\r\nspecialize h_universal hy\r\nrewrite [h_universal]\r\nring_nf\r\n",
+        "completed": true,
+        "selections": [
+          {
+            "selectionStartLineNumber": 10,
+            "selectionStartColumn": 1,
+            "positionLineNumber": 10,
+            "positionColumn": 1
+          }
+        ],
+        "help": []
+      },
+      "readIntro": false
+    },
+    "L1Pset": {
+      "1": {
+        "code": "specialize h 3\r\nrewrite [h]\r\nuse 7\r\nring_nf\r\n",
+        "completed": true,
+        "selections": [
+          {
+            "selectionStartLineNumber": 5,
+            "selectionStartColumn": 1,
+            "positionLineNumber": 5,
+            "positionColumn": 1
+          }
+        ],
+        "help": []
+      },
+      "2": {
+        "code": "have huv (u v : ℝ) : (u + v) ^ 2 = (u ^ 2 + v ^ 2) + 2 * (u * v) := by ring_nf\r\nuse 4\r\nintro\r\nintro\r\nspecialize huv x y \r\nrewrite [huv]\r\nintro\r\nintro\r\nrewrite [a_1]\r\nrewrite [a]\r\nring_nf\r\n",
+        "completed": true,
+        "selections": [
+          {
+            "selectionStartLineNumber": 11,
+            "selectionStartColumn": 8,
+            "positionLineNumber": 11,
+            "positionColumn": 8
+          }
+        ],
+        "help": []
+      },
+      "3": {
+        "code": "specialize h1 0\r\nring_nf at h1\r\nrewrite [h1]\r\nrewrite [h2]\r\nring_nf\r\n",
+        "completed": true,
+        "selections": [
+          {
+            "selectionStartLineNumber": 6,
+            "selectionStartColumn": 1,
+            "positionLineNumber": 6,
+            "positionColumn": 1
+          }
+        ],
+        "help": []
+      },
+      "4": {
+        "code": "have h3: g (0 + 1) = g (0) + 3 := by apply h1 0\r\nhave h4: g (1 + 1 ) = g (1) + 3 := by apply h1 1\r\nring_nf at h3 h4\r\nspecialize h1 1\r\nring_nf at h1\r\nrewrite [h4]\r\nrewrite [h3]\r\nrewrite [h2]\r\nring_nf\r\n\r\n\r\n",
+        "completed": true,
+        "selections": [
+          {
+            "selectionStartLineNumber": 4,
+            "selectionStartColumn": 2,
+            "positionLineNumber": 4,
+            "positionColumn": 2
+          }
+        ],
+        "help": []
+      },
+      "5": {
+        "code": "specialize h1 x\r\nuse 15\r\nrewrite [ ← h1]\r\napply h2\r\n",
+        "completed": true,
+        "selections": [
+          {
+            "selectionStartLineNumber": 5,
+            "selectionStartColumn": 1,
+            "positionLineNumber": 5,
+            "positionColumn": 1
+          }
+        ],
+        "help": []
+      },
+      "readIntro": false
+    },
+    "NewtonsCalculationOfPi": {
+      "1": {
+        "code": "change ∀ ε > 0, ∃ N: ℕ, ∀ n ≥ N, |a n -L| < ε\r\nintro ε epos\r\nuse 0\r\nintro n nge0\r\nrewrite [a_const n]\r\nring_nf\r\nnorm_num\r\napply epos",
+        "completed": true,
+        "selections": [
+          {
+            "selectionStartLineNumber": 8,
+            "selectionStartColumn": 11,
+            "positionLineNumber": 8,
+            "positionColumn": 11
+          }
+        ],
+        "help": [
+          0
+        ]
+      },
+      "readIntro": false
+    },
+    "L2Pset": {
+      "1": {
+        "code": "use 7 / 256\r\nintro \r\nring_nf\r\n",
+        "completed": true,
+        "selections": [
+          {
+            "selectionStartLineNumber": 4,
+            "selectionStartColumn": 1,
+            "positionLineNumber": 4,
+            "positionColumn": 1
+          }
+        ],
+        "help": []
+      },
+      "2": {
+        "code": "use 3 / 8\r\nuse ( 3 / 8 ) * ( -1 / 2) / 3\r\nuse ( - 1 / 16)  * ( - 3 / 2 ) /4\r\nintro\r\nring_nf\r\n",
+        "completed": true,
+        "selections": [
+          {
+            "selectionStartLineNumber": 4,
+            "selectionStartColumn": 6,
+            "positionLineNumber": 4,
+            "positionColumn": 6
+          }
+        ],
+        "help": []
+      },
+      "readIntro": false
+    },
+    "Lecture3": {
+      "1": {
+        "code": "use ⌈1 / ε⌉₊ + 1\r\nhave fact: 1 / ε ≤ ⌈1 / ε⌉₊ := by bound\r\npush_cast\r\nbound\r\n\r\n",
+        "completed": true,
+        "selections": [
+          {
+            "selectionStartLineNumber": 4,
+            "selectionStartColumn": 1,
+            "positionLineNumber": 4,
+            "positionColumn": 1
+          }
+        ],
+        "help": [
+          1,
+          2
+        ]
+      },
+      "2": {
+        "code": "change ∀ ε > 0, ∃ N : ℕ, ∀ n ≥ N, |a n - 0| < ε\r\nintro ε espos; choose N Ngtinve using ArchProp espos\r\nuse N + 1; intro n ngeNp1_Nat\r\n-- exact_mod_cast is needed to apply linarith on the next line \r\nhave ngeNp1: (n: ℝ) ≥ (N + 1: ℝ) := by exact_mod_cast ngeNp1_Nat\r\nhave npos: (n: ℝ) > 0 := by linarith [ngeNp1]\r\nrewrite [ha]; norm_num\r\nhave ngtinve: (n: ℝ) > 1/ε:= by linarith [ngeNp1, Ngtinve]\r\nfield_simp [espos] at ngtinve; field_simp [npos]\r\nlinarith [ngtinve]",
+        "completed": true,
+        "selections": [
+          {
+            "selectionStartLineNumber": 7,
+            "selectionStartColumn": 14,
+            "positionLineNumber": 7,
+            "positionColumn": 14
+          }
+        ],
+        "help": [
+          0
+        ]
+      },
+      "readIntro": false
+    },
+    "L3Pset": {
+      "1": {
+        "code": "use ⌈y / x⌉₊ + 1\r\npush_cast\r\nhave h3: y / x <= ⌈y / x⌉₊ := by\r\n   bound\r\nhave h6: y / x < ⌈y / x⌉₊ + 1 := by\r\n  linarith [h3]\r\nfield_simp at h6\r\napply h6\r\n",
+        "completed": true,
+        "selections": [
+          {
+            "selectionStartLineNumber": 9,
+            "selectionStartColumn": 1,
+            "positionLineNumber": 9,
+            "positionColumn": 1
+          }
+        ],
+        "help": []
+      },
+      "2": {
+        "code": "\r\nuse 1 -- for L\r\nintro ε ε_spos\r\nuse ⌈1 / ε⌉₊ + 1 -- for N\r\nintro n n_ge_N; rewrite [ha]\r\n-- transform the goal from |(↑n + 1) / ↑n - 1| < ε to 1 < ↑n * ε\r\n-- n0 is needed even though not referred to, while norm_num gets rid of the abs\r\nhave n0: n > 0 := by linarith [n_ge_N]\r\nfield_simp; ring_nf; norm_num; field_simp\r\n\r\nhave n_gt_ceil_inv_e: (n: ℝ) > ⌈1 / ε⌉₊ := by\r\n  have: n > ⌈1 / ε⌉₊ := by\r\n    linarith [n_ge_N]\r\n  exact_mod_cast this\r\nhave ceil_inv_e_gt_inv_e: ⌈1 / ε⌉₊ >= 1 / ε := by bound\r\nhave n_gt_inv_e: n > 1 / ε := by\r\n  linarith [n_gt_ceil_inv_e, ceil_inv_e_gt_inv_e]\r\nfield_simp at n_gt_inv_e\r\nlinarith [n_gt_inv_e]",
+        "completed": true,
+        "selections": [
+          {
+            "selectionStartLineNumber": 19,
+            "selectionStartColumn": 22,
+            "positionLineNumber": 19,
+            "positionColumn": 22
+          }
+        ],
+        "help": []
+      },
+      "3": {
+        "code": "use 0\r\nintro ε εpos\r\nhave εinvpos: 1 / ε > 0 := by bound\r\nhave ε3: ⌈1 / ε⌉₊ >= 1 / ε := by bound\r\nuse ⌈1 / ε⌉₊ + 2\r\nintro n hn\r\nring_nf\r\nrewrite [ha]\r\nnorm_num\r\nhave hn2: (n: ℝ) ≥ ⌈1 / ε⌉₊ + 2 := by exact_mod_cast hn\r\nhave hn3: (n: ℝ) > 0 := by linarith [hn2]\r\nfield_simp\r\nhave hn4: 1 / ε < (n: ℝ) := by bound\r\nfield_simp at hn4\r\nhave f1:1 < ε * n * n := by bound\r\nhave: ↑n ^ 2 * ε = ε * n * n := by field_simp\r\nrewrite [this]\r\napply f1\r\n",
+        "completed": true,
+        "selections": [
+          {
+            "selectionStartLineNumber": 19,
+            "selectionStartColumn": 1,
+            "positionLineNumber": 19,
+            "positionColumn": 1
+          }
+        ],
+        "help": []
+      },
+      "4": {
+        "code": "use 3 / 2; intro ε εpos; use ⌈1/ε⌉₊; intro n hn; rewrite [ha]\r\nfield_simp; ring_nf; field_simp\r\nhave εinv_lt_εinvceil: 1 / ε ≤ ⌈1 / ε ⌉₊ := by bound\r\nhave hnR: ⌈1 / ε⌉₊ <= (n: ℝ) := by exact_mod_cast hn\r\nhave hn2: 1/ε ≤ (n: ℝ) := by bound;\r\nfield_simp at hn2\r\nhave g1: 0 <= 1 / (10 + (n:ℝ) * 4) := by bound\r\nhave : |1 / (10 + (n:ℝ) * 4)| = 1 / (10 + (n:ℝ) * 4) := by apply abs_of_nonneg g1\r\nrewrite [this]; field_simp; linarith [hn2, εpos]\r\n",
+        "completed": true,
+        "selections": [
+          {
+            "selectionStartLineNumber": 9,
+            "selectionStartColumn": 28,
+            "positionLineNumber": 9,
+            "positionColumn": 28
+          }
+        ],
+        "help": []
+      },
+      "readIntro": false
+    },
+    "Lecture4": {
+      "1": {
+        "code": "change SeqConv a → False; intro hac; choose L hL using hac; \r\nspecialize hL (1/4) (by bound); choose N hN using hL;\r\nhave p34ltL: 3/4 < L := by\r\n  have h2N:= hN (2*N) (by linarith)\r\n  rewrite [ha] at h2N\r\n  have : (-1: ℝ) ^ (2*N) = 1 := by bound; \r\n  rewrite [this] at h2N\r\n  have f0: 1-L <= |1-L| := by bound\r\n  have: 1-L < 1/4 := by linarith [f0, h2N];\r\n  bound\r\nhave Lltm34: L < -3/4 := by\r\n  have h2Nplus1:= hN (2*N+1) (by linarith)\r\n  rewrite [ha] at h2Nplus1\r\n  have : (-1: ℝ) ^ (2*N+1) = -1 := by bound;\r\n  rewrite [this] at h2Nplus1\r\n  have f0: 1+L <= |1+L| := by bound\r\n  have f1: |-(1+L)| = |1+L| := by apply abs_neg\r\n  ring_nf at f1;\r\n  have: 1+L < 1/4 := by linarith [f0, f1, h2Nplus1]; \r\n  bound\r\nlinarith[Lltm34, p34ltL]",
+        "completed": true,
+        "selections": [
+          {
+            "selectionStartLineNumber": 2,
+            "selectionStartColumn": 25,
+            "positionLineNumber": 2,
+            "positionColumn": 25
+          }
+        ],
+        "help": []
+      },
+      "readIntro": false
+    },
+    "L4Pset": {
+      "1": {
+        "code": "intro ca;\r\nchoose L hL using ca\r\nspecialize hL (1/4) (by linarith); choose N hN using hL; have hN' := hN\r\nhave f0: 1/((N:ℝ) + 4) <= (1/4) := by bound\r\nspecialize hN  (2*(N+4)  ) (by bound); rewrite [ha2n  ] at hN;  push_cast at hN\r\nhave hL: 5/2 < L := by\r\n  have : 3 - 1 / (↑N + 4) - L <= |3 - 1 / (↑N + 4) - L| := by bound\r\n  bound\r\nspecialize hN' (2*(N+4)+1) (by bound); rewrite [ha2np1] at hN'; push_cast at hN'\r\nhave hL': L < 3/2 := by\r\n  have : |-(1 + 1 / (↑N + 4) - L)| = |1 + 1 / (↑N + 4) - L| := by apply abs_neg\r\n  rewrite [←this] at hN'\r\n  have : (-(1 + 1 / (↑N + 4) - L)) <= |(-(1 + 1 / (↑N + 4) - L))| := by bound\r\n  bound\r\nlinarith [hL, hL']",
+        "completed": true,
+        "selections": [
+          {
+            "selectionStartLineNumber": 15,
+            "selectionStartColumn": 19,
+            "positionLineNumber": 15,
+            "positionColumn": 19
+          }
+        ],
+        "help": []
+      },
+      "readIntro": false
+    },
+    "Lecture5": {
+      "1": {
+        "code": "intro ε εpos;\r\nspecialize h (ε/2) (by bound)\r\nchoose N hN using h;\r\nuse N\r\nintro n ngeN\r\nspecialize hN n ngeN\r\nspecialize b_scaled n;\r\nrewrite [b_scaled]\r\nhave: 2 * a n - 2 * L = 2 * (a n - L) := by bound\r\nrewrite [this]\r\nhave: |2 * (a n - L)| = |2| * |(a n - L)| := by apply abs_mul \r\nrewrite [this]\r\nnorm_num\r\nlinarith [hN]\r\n",
+        "completed": true,
+        "selections": [
+          {
+            "selectionStartLineNumber": 15,
+            "selectionStartColumn": 1,
+            "positionLineNumber": 15,
+            "positionColumn": 1
+          }
+        ],
+        "help": []
+      },
+      "readIntro": false
+    },
+    "Lecture6": {
+      "1": {
+        "code": "intro ε εpos;\r\nspecialize ha (ε/2) (by bound); choose Na hNa using ha\r\nspecialize hb (ε/2) (by bound); choose Nb hNb using hb\r\nuse Na + Nb; intro n hn; rewrite [hc]\r\nspecialize hNa n (by bound)\r\nspecialize hNb n (by bound)\r\nhave f1: a n + b n - (L + M) = (a n-L)+(b n-M):= by ring_nf\r\nrewrite [f1]\r\nhave: |a n - L + (b n - M)| <= |a n - L| + |b n - M| := by apply abs_add\r\nlinarith [this, hNa, hNb]\r\n",
+        "completed": true,
+        "selections": [
+          {
+            "selectionStartLineNumber": 11,
+            "selectionStartColumn": 1,
+            "positionLineNumber": 11,
+            "positionColumn": 1
+          }
+        ],
+        "help": []
+      },
+      "2": {
+        "code": "split_ands;\r\napply hx\r\napply hy\r\n",
+        "completed": true,
+        "selections": [
+          {
+            "selectionStartLineNumber": 3,
+            "selectionStartColumn": 9,
+            "positionLineNumber": 3,
+            "positionColumn": 9
+          }
+        ],
+        "help": []
+      },
+      "3": {
+        "code": "right; apply hy",
+        "completed": true,
+        "selections": [
+          {
+            "selectionStartLineNumber": 1,
+            "selectionStartColumn": 14,
+            "positionLineNumber": 1,
+            "positionColumn": 14
+          }
+        ],
+        "help": []
+      },
+      "4": {
+        "code": "apply h.2",
+        "completed": true,
+        "selections": [
+          {
+            "selectionStartLineNumber": 1,
+            "selectionStartColumn": 10,
+            "positionLineNumber": 1,
+            "positionColumn": 10
+          }
+        ],
+        "help": []
+      },
+      "5": {
+        "code": "cases' h with hx hy\r\nrewrite [hx]; ring_nf\r\nrewrite [hy]; ring_nf",
+        "completed": true,
+        "selections": [
+          {
+            "selectionStartLineNumber": 3,
+            "selectionStartColumn": 22,
+            "positionLineNumber": 3,
+            "positionColumn": 22
+          }
+        ],
+        "help": []
+      },
+      "6": {
+        "code": "specialize ha 1 (by bound);\r\nchoose N hN using ha; use N\r\nintro n ngeN\r\nspecialize hN n (by bound)\r\nrewrite [abs_lt] at hN\r\nlinarith [hN.1]\r\n",
+        "completed": true,
+        "selections": [
+          {
+            "selectionStartLineNumber": 6,
+            "selectionStartColumn": 1,
+            "positionLineNumber": 6,
+            "positionColumn": 1
+          }
+        ],
+        "help": []
+      },
+      "7": {
+        "code": "intro ε εpos;\r\nspecialize aToL ε εpos; choose Na hNa using aToL;\r\nspecialize cToL ε εpos; choose Nc hNc using cToL;\r\nuse (Na + Nc); intro n nge\r\nspecialize hNa n (by bound); specialize hNc n (by bound)\r\nrewrite [abs_lt] at hNa hNc ⊢\r\nspecialize aLeb n; specialize bLec n\r\nsplit_ands\r\nlinarith [aLeb, hNa.1]\r\nlinarith [bLec, hNc.2]\r\n",
+        "completed": true,
+        "selections": [
+          {
+            "selectionStartLineNumber": 11,
+            "selectionStartColumn": 1,
+            "positionLineNumber": 11,
+            "positionColumn": 1
+          }
+        ],
+        "help": []
+      },
+      "readIntro": false
+    },
+    "L6Pset": {
+      "1": {
+        "code": "split_ands\r\napply hx\r\napply hy\r\napply hz\r\n",
+        "completed": true,
+        "selections": [
+          {
+            "selectionStartLineNumber": 5,
+            "selectionStartColumn": 1,
+            "positionLineNumber": 5,
+            "positionColumn": 1
+          }
+        ],
+        "help": []
+      },
+      "2": {
+        "code": "apply h.2.2",
+        "completed": true,
+        "selections": [
+          {
+            "selectionStartLineNumber": 1,
+            "selectionStartColumn": 12,
+            "positionLineNumber": 1,
+            "positionColumn": 12
+          }
+        ],
+        "help": []
+      },
+      "3": {
+        "code": "specialize ha 5 (by bound)\r\nchoose N hN using ha\r\nuse N\r\nintro n ngeN\r\nspecialize hN n ngeN\r\nrewrite [abs_lt] at hN\r\nhave : 0 < a n := by\r\n  linarith [hN.1]\r\napply this\r\n",
+        "completed": true,
+        "selections": [
+          {
+            "selectionStartLineNumber": 7,
+            "selectionStartColumn": 1,
+            "positionLineNumber": 7,
+            "positionColumn": 1
+          }
+        ],
+        "help": []
+      },
+      "4": {
+        "code": "intro goal_prop; choose L hL using goal_prop\r\nhave limL := hL.2\r\nspecialize limL 1 (by bound); choose N hN using limL\r\nspecialize ha N; choose n hn using ha\r\nspecialize hN n hn.1\r\nhave ht : |( a n - L) + L| <= |a n - L| + |L|:= by apply abs_add\r\nring_nf at ht\r\nlinarith [ht, hN, hL.1, hn.2]\r\n",
+        "completed": true,
+        "selections": [
+          {
+            "selectionStartLineNumber": 9,
+            "selectionStartColumn": 1,
+            "positionLineNumber": 9,
+            "positionColumn": 1
+          }
+        ],
+        "help": []
+      },
+      "5": {
+        "code": "split_ands\r\napply SqueezeThm a b c L ha hc hab hbc\r\napply SqueezeThm c d e L hc he hcd hde\r\n",
+        "completed": true,
+        "selections": [
+          {
+            "selectionStartLineNumber": 4,
+            "selectionStartColumn": 1,
+            "positionLineNumber": 4,
+            "positionColumn": 1
+          }
+        ],
+        "help": []
+      },
+      "readIntro": false
+    },
+    "Lecture7": {
+      "1": {
+        "code": "by_contra; have LneM: L-M ≠ 0 := by bound\r\nhave f1: 0 < |L-M| := by apply abs_pos_of_nonzero LneM\r\nspecialize aToL (|L - M|/2) (by bound); choose N1 hN1 using aToL\r\nspecialize aToM (|L - M|/2) (by bound); choose N2 hN2 using aToM\r\nspecialize hN1 (N1+N2) (by bound); specialize hN2 (N1+N2) (by bound)\r\nhave teLMa: |L - M| ≤ |a (N1 + N2) - L| + |a (N1 + N2) - M| := by\r\n  have : |(L - a (N1 + N2))+(a (N1 + N2) - M)| <= |L - a (N1 + N2)| + |a (N1 + N2) -M| := by apply abs_add \r\n  ring_nf at this\r\n  have f3: L - a (N1 + N2) = -(a (N1 + N2)-L) := by ring_nf\r\n  rewrite [f3] at this;\r\n  have f4: |(-(a (N1 + N2) - L))| = |a (N1 + N2) - L| := by apply abs_neg\r\n  rewrite [f4] at this\r\n  apply this\r\nlinarith [hN1, hN2, teLMa]",
+        "completed": true,
+        "selections": [
+          {
+            "selectionStartLineNumber": 2,
+            "selectionStartColumn": 1,
+            "positionLineNumber": 2,
+            "positionColumn": 1
+          }
+        ],
+        "help": []
+      },
+      "2": {
+        "code": "have modLpos: |L| > 0 := by apply abs_pos_of_nonzero LneZero\r\nspecialize aToL (|L|/5) (by bound)\r\nchoose N hN using aToL\r\nuse N\r\nintro n ngeN\r\nspecialize hN n ngeN\r\nhave te: |-a n| + |a n - L| >= |-a n + (a n - L)| := by apply abs_add\r\nring_nf at te; rewrite [abs_neg] at te; rewrite [abs_neg] at te\r\nlinarith [modLpos, hN, te]\r\n",
+        "completed": true,
+        "selections": [
+          {
+            "selectionStartLineNumber": 10,
+            "selectionStartColumn": 1,
+            "positionLineNumber": 10,
+            "positionColumn": 1
+          }
+        ],
+        "help": []
+      },
+      "3": {
+        "code": "intro ε εpos\r\nspecialize aToL ε εpos\r\nchoose N hN using aToL\r\nuse N\r\nintro n ngeN\r\nspecialize hN n ngeN\r\nrewrite [bEqAbsa]\r\n-- Two things behave badly here\r\n-- Lean misinterprets | as a match\r\n-- The server can lag by several  seconds or more on each change,\r\n-- and accumulates across keystrokes\r\n-- lags\r\nhave : abs (|a n| -|L|) ≤ |a n - L| := by\r\n  apply abs_Lipschitz\r\nbound\r\n",
+        "completed": true,
+        "selections": [
+          {
+            "selectionStartLineNumber": 9,
+            "selectionStartColumn": 26,
+            "positionLineNumber": 9,
+            "positionColumn": 26
+          }
+        ],
+        "help": []
+      },
+      "4": {
+        "code": "intro ε εspos\r\nhave absLgt0: 0 < |L| := by apply abs_pos_of_nonzero LneZero\r\nhave epsL2gt0: 0 < ε * (|L| * |L|) / 2 := by bound\r\nhave _2gt0: 0 < 2 := by norm_num\r\n\r\nhave abs_flip: ∀ (p q: ℝ), |p-q| = |q-p| := by {\r\n  intro p q\r\n  have f2: q-p=-(p-q) := by ring_nf\r\n  rewrite [f2]\r\n  have f3: |-(p-q)| = |p-q| := by apply abs_neg\r\n  rewrite [f3]; rfl  \r\n}\r\nhave hmin: ∀ (p q: ℝ), (p+q-|p-q|)/2 <= p ∧ (p+q-|p-q|)/2 <= q := by {\r\n    intro p q\r\n    split_ands\r\n    have f1 : (q-p)/2 <= |q-p|/2:= by bound\r\n    rewrite [← abs_flip p q] at f1\r\n    linarith [f1]\r\n    have f2 : (p-q)/2 <= |p-q|/2:= by bound\r\n    linarith [f2]\r\n}\r\nhave lemR: ∀ (x : ℝ), (x < 0 ∨ x ≥ 0) := by {\r\n  intro x\r\n  by_contra h\r\n  have h1 : x < 0 := by\r\n    by_contra h2\r\n    have h5 : x ≥ 0 := by linarith [h2]\r\n    apply h; right; apply h5\r\n  apply h; left; apply h1\r\n}\r\nhave hmin2: ∀ (p q: ℝ), (p+q-|p-q|)/2 >= p ∨ (p+q-|p-q|)/2 >= q := by {\r\n     intro p q\r\n     have h1 := lemR (p-q)\r\n     cases' h1 with hp hq\r\n\r\n     rewrite [abs_flip p q]\r\n     have h3: |q-p| = q-p := by apply abs_of_nonneg (by bound)\r\n     rewrite [h3]; ring_nf;\r\n     left; bound\r\n     \r\n     have h5: |p-q| = p-q := by apply abs_of_nonneg (by bound)\r\n     rewrite [h5]; ring_nf\r\n     right; bound\r\n}\r\nhave dmin: ∀ (p q: ℝ), ∃ m, m=(p+q-|p-q|)/2 := by {\r\n  intro p q;\r\n  use (p+q-|p-q|)/2\r\n}\r\nhave cty: ∃ δ > 0, ∀ x, |x - L| < δ → |1/x - 1/L| < ε := by {\r\n  choose δ hδ using dmin (ε * (|L| * |L|) / 2) (|L|/2)\r\n  use δ\r\n  split_ands\r\n  -- case h.refine_1 =>\r\n  rewrite [hδ]\r\n  have f1 := hmin2  (ε * (|L| * |L|) / 2) (|L|/2)\r\n  cases' f1 with c1 c2\r\n  linarith [c1, epsL2gt0]\r\n  linarith [c2, absLgt0]\r\n  -- case h.refine_2 =>\r\n  intro x xnear\r\n  have f7: δ ≤ |L| / 2 := by {\r\n    rewrite [hδ]\r\n    have f6 := hmin  (ε * (|L| * |L|) / 2) (|L|/2)\r\n    apply f6.right\r\n  }\r\n  have f8: |x-L| < |L|/2 := by linarith [xnear, f7]\r\n  have f9: |x| >= |L|/2 := by {\r\n    have f10: |L-x+x| <= |L-x|+|x| := by apply abs_add\r\n    ring_nf at f10\r\n    rewrite [abs_flip L x]  at f10\r\n    linarith [f8, f10]\r\n  }\r\n  have absxgt0: 0 < |x| := by {\r\n    linarith [f9, absLgt0]\r\n  }\r\n  have xneZero: x≠0 := by apply nonzero_of_abs_pos absxgt0\r\n  have f1: 1 / x - 1 / L = (L-x)/(x*L) := by field_simp\r\n  rewrite [f1]\r\n  have f2: |(L - x) / (x * L)| = |L-x|/|x*L| := by apply abs_div\r\n  rewrite [f2]\r\n  have f3: L-x = -(x-L) := by ring_nf\r\n  rewrite [f3]\r\n  have f4: |-(x-L)| = |x-L| := by apply abs_neg\r\n  rewrite [f4]\r\n  have f5: |x*L| = |x| * |L| := by apply abs_mul\r\n  rewrite [f5]\r\n  field_simp\r\n  have f11: δ ≤ (ε * (|L| * |L|) / 2) := by {\r\n    rewrite [hδ]\r\n    apply (hmin  (ε * (|L| * |L|) / 2) (|L|/2)).left\r\n  }\r\n  have f12: |x - L| < ε * (|L| * |L|) / 2 := by bound\r\n  have f13: (|L|/2) * |L| * ε  <= |x| * |L| * ε := by bound\r\n  have f14: (|L|/2) * |L| * ε = (ε * (|L| * |L|) / 2) := by ring_nf\r\n  rewrite [f14] at f13\r\n  linarith [f12, f13]\r\n}\r\nchoose δ hδ using cty\r\nhave δpos := hδ.left\r\nhave hxfer := hδ.right\r\nspecialize aToL δ δpos\r\nchoose N hN using aToL\r\nuse N\r\nintro n hn\r\nspecialize bEqInva n\r\nrewrite [bEqInva]\r\nspecialize hN n hn\r\nspecialize hxfer (a n) hN\r\napply hxfer\r\n",
+        "completed": true,
+        "selections": [
+          {
+            "selectionStartLineNumber": 110,
+            "selectionStartColumn": 1,
+            "positionLineNumber": 110,
+            "positionColumn": 1
+          }
+        ],
+        "help": []
+      },
+      "readIntro": false
+    }
+  },
+  "difficulty": 2,
+  "typewriterMode": false
+}
